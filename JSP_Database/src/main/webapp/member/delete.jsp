@@ -1,0 +1,43 @@
+<%@page import="com.jsp.member.MemberDAO"%>
+<%@page import="com.jsp.member.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<%
+		MemberDTO dto = (MemberDTO)session.getAttribute("member");
+	
+		MemberDAO dao = MemberDAO.getInstacne();
+		
+		int result = dao.memberDelete(dto.getId());
+		
+		if(result == 1){
+			
+			%>
+				<script>
+					alert('회원이 삭제되었습니다.');
+					window.location = 'logout.jsp';
+				</script>
+			<%
+			
+		}else{
+			
+		%>
+			<script>
+				alert('회원이 삭제 실패입니다.');
+				history.back();
+			</script>
+		<%
+			
+		}
+	
+	%>
+	
+</body>
+</html>
