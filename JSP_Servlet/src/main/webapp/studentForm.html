@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+학생정보 입력 폼
+studentID, name, age, major, circle[checkbox]
+action="/JSP_Servlet/student, method="post"
+ -->
+
+<h2>학생정보 입력 폼</h2>
+<form action="/JSP_Servlet/student" method="post" charset="utf-8">
+<h2>학번</h2>
+<input type="text" name="studentID">
+<br>
+
+<h2>이름</h2>
+<input type="text" name="name">
+<br>
+
+<h2>나이</h2>
+<input type="text" name="age">
+<br>
+
+<h2>전공</h2>
+<input type="text" name="major">
+<br>
+
+<h2>동아리</h2>
+<input type="checkbox" name="circle" value="밴드">밴드
+<input type="checkbox" name="circle" value="축구">축구
+<input type="checkbox" name="circle" value="사진">사진
+<input type="checkbox" name="circle" value="음악">음악
+
+<input type="submit" value="제출">
+</form>
+</body>
+</html>

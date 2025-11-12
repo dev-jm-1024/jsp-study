@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/JSP_Servlet/member" method="post">
+
+<h2>아이디</h2>
+<input type="text" name="id">
+<br>
+
+<h2>비밀번호</h2>
+<input type="text" name="pw">
+<br>
+
+<h2>이름</h2>
+<input type="text" name="name">
+<br>
+
+<h2>나이</h2>
+<input type="text" name="age">
+<br>
+
+<h2>취미</h2>
+<input type="checkbox" name="hobby" value="등산">등산
+<input type="checkbox" name="hobby" value="게임">게임
+<input type="checkbox" name="hobby" value="영화감상">영화감상
+<input type="checkbox" name="hobby" value="축구">축구
+  
+<h2>지역</h2>
+  <select id="area" name="area">
+    <option value="seoul">서울</option>
+    <option value="deajeon">대전</option>
+    <option value="daegu">대구</option>
+    <option value="busan">부산</option>
+  </select><br><br>
+
+<input type="submit" value="회원가입">
+
+</form>
+  
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var number = document.form.dan.value
+
+function checkForm() {
+    // number 변수를 checkForm() 함수 안에서 정의
+    var number = document.forms["form"]["dan"].value;
+
+    if (number == null || number == "") {
+        alert("공백이 존재합니다");
+        document.forms["form"].reset(); // 폼 리셋
+        return false; // 기본 제출 동작 막기
+    }
+    return true; // 유효성 검사가 성공하면 제출 진행
+}
+
+</script>
+
+<h2>2 ~ 9 사이의 숫자를 입력해주세요</h2>
+<form action="/JSP_Servlet/dan" method="get" name="form">
+
+숫자 입력:
+<input type="number" name="dan">
+<input type="submit" value="전송" onclick="checkForm()">
+
+</form>
+</body>
+</html>
