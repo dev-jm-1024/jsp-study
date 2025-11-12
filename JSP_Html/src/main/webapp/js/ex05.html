@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+    function formCheck()
+    {
+        var id = document.joinForm.id.value; //form name이 joinForm이고 name이 id인 요소의 값 가져온다
+        var pw = document.joinForm.pw.value;
+        var pwCheck = document.joinForm.pwCheck.value;
+        var name = document.joinForm.name.value;
+        var tel = document.joinForm.tel.value;
+        var email = document.joinForm.email.value;
+
+       
+        if(id == null || id == ""){
+            alert("아이디 입력하세요.")
+            document.joinForm.id.focus(); //커서를 아이디에 맞춰준다
+            return;
+        }
+        if(id.length < 4)//아이디 글자수 제한두기
+        {
+        	alert("아이디는 4글자 이상이어야 합니다.");
+        	document.joinForm.id.focus();
+        }
+        if(pw==null || pw ==""){
+        	alert("비밀번호 입력하세요.")
+        	document.joinForm.pw.focus();
+        }
+        if(pw != pwCheck){
+        	alert("비밀번호가 일치하지 않습니다.")
+        	document.joinForm.pw.focus();
+        	return;
+        }
+        document.joinForm.submit();
+        //유효성 검사를 마친후에 폼의 데이터를 서버에 전송
+    }
+</script>
+
+<form name="joinForm" action="#">
+    <h2>ID</h2>
+    <input type="text" id="id" name="id">
+
+    <h2>PW</h2>
+    <input type="password" id="pw" name="pw">
+
+    <h2>pwCheck</h2>
+    <input type="password" id="pwCheck" name="pwCheck">
+
+    <h2>name</h2>
+    <input type="text" id="name" name="name">
+
+    <h2>tel</h2>
+    <input type="text" id="tel" name="tel">
+
+    <h2>email</h2>
+    <input type="email" id="email" name="email">
+
+    <button type="button" onclick="formCheck()">submit</button>
+</form>
+</body>
+</html>
